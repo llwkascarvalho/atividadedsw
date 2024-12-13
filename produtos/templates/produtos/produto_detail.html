@@ -1,0 +1,12 @@
+<h1>Detalhes do Produto</h1>
+<p>Nome: {{ produto.nome }}</p>
+<p>Código: {{ produto.codigo }}</p>
+<p>Descrição: {{ produto.descricao }}</p>
+<p>Preço: {{ produto.preco }}</p>
+<p>Quantidade: {{ produto.quantidade }}</p>
+<p>Fornecedor: <a href="{% url 'fornecedor_list' %}">{{ produto.fornecedor.nome }}</a></p>
+<p>Categorias:
+    {% for categoria in produto.categorias.all %}
+        <a href="{% url 'categoria_list' %}">{{ categoria.nome }}</a>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+</p>
