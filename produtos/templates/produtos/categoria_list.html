@@ -1,6 +1,8 @@
 <h1>Lista de Categorias</h1>
 <ul>
     {% for categoria in categorias %}
-    <li>{{ categoria.nome }}</li>
+    <li>
+        <a href="{% url 'categoria_produtos' categoria.pk %}">{{ categoria.nome }}</a>
+    </li>
     {% endfor %}
 </ul>

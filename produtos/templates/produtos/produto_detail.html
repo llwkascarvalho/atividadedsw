@@ -7,6 +7,6 @@
 <p>Fornecedor: <a href="{% url 'fornecedor_list' %}">{{ produto.fornecedor.nome }}</a></p>
 <p>Categorias:
     {% for categoria in produto.categorias.all %}
-        <a href="{% url 'categoria_list' %}">{{ categoria.nome }}</a>{% if not forloop.last %}, {% endif %}
+        <a href="{% url 'categoria_produtos'  categoria.pk %}">{{ categoria.nome }}</a>{% if not forloop.last %}, {% endif %}
     {% endfor %}
 </p>

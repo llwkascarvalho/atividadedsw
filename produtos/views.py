@@ -17,3 +17,8 @@ def fornecedor_list(request):
     fornecedores = Fornecedor.objects.all()
     return render(request, 'produtos/fornecedor_list.html', {'fornecedores': fornecedores})
 
+def categoria_produtos(request, pk):
+    categoria = get_object_or_404(Categoria, pk=pk)
+    produtos = Produto.objects.filter(categorias=categoria)
+    return render(request, 'produtos/categoria_produtos.html', {'categoria': categoria, 'produtos': produtos})
+
